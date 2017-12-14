@@ -14,13 +14,18 @@ public class SuperArray {
 
     //default constructor – initializes 10-item array
     public SuperArray() {
-        /* YOUR IMPLEMENTATION HERE */
+        _data = new int[10];
+	_size = _data.length;
     }
 
 
     // represent SuperArray in [a,b,c] format
     public String toString() {
-        /* YOUR IMPLEMENTATION HERE */
+	String x = "[";
+	for(int i = 0; i < _data.length; i++){
+	    x = x + _data[i] + ",";
+	}
+	return x + "]";
     }
 
 
