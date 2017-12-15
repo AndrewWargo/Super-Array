@@ -15,7 +15,11 @@ public class SuperArray {
     //default constructor – initializes 10-item array
     public SuperArray() {
         _data = new int[10];
-	_size = _data.length;
+        _size = _data.length;
+    }
+    
+    public int getLength() {
+    	return _size;
     }
 
 
@@ -30,20 +34,28 @@ public class SuperArray {
 
 
     //double the capacity of SuperArray
-    private void expand() {
-        /* YOUR IMPLEMENTATION HERE */
+    public void expand() {
+        int[] x = new int[_size * 2];
+        for(int i = 0; i < _size; i++) {
+        	x[i] = _data[i];
+        }
+        _data = x;
+        _size = _size * 2;
     }
 
 
     //accessor -- return value at specified index
     public int get( int index ) {
-        /* YOUR IMPLEMENTATION HERE */
+        return _data[index];
     }
 
 
     //mutator -- set value at index to newVal,
     //           return old value at index
     public int set( int index, int newVal ) {
-        /* YOUR IMPLEMENTATION HERE */
+        int y = get(index);
+        _data[index] = newVal;
+        return y;
     }
 }//end class
+
