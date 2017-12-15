@@ -17,45 +17,46 @@ public class SuperArray {
         _data = new int[10];
         _size = _data.length;
     }
-    
+
+    //returns length of _data
     public int getLength() {
-    	return _size;
+    	return _size;          
     }
 
 
-    // represent SuperArray in [a,b,c] format
+    // represents SuperArray in [a,b,c] format
     public String toString() {
-	String x = "[";
-	for(int i = 0; i < _data.length; i++){
+	String x = "[";                        
+	for(int i = 0; i < _data.length; i++){  
 	    x = x + _data[i] + ",";
 	}
 	return x + "]";
     }
 
 
-    //double the capacity of SuperArray
+    //doubles the capacity of SuperArray
     public void expand() {
-        int[] x = new int[_size * 2];
-        for(int i = 0; i < _size; i++) {
-        	x[i] = _data[i];
+        int[] x = new int[_size * 2]; //Constructs a reference to a new array  with double the length of _data
+        for(int i = 0; i < _size; i++) { 
+	    x[i] = _data[i]; //Adds the values in _data to the new array, in the same position as data
         }
-        _data = x;
-        _size = _size * 2;
+        _data = x; //Sets _data to the array referenced by x, which is itself _data with double the length
+        _size = _data.length; //Sets the size variable to the length of the new array
     }
 
 
-    //accessor -- return value at specified index
+    //accessor -- returns value at specified index
     public int get( int index ) {
         return _data[index];
     }
 
 
-    //mutator -- set value at index to newVal,
+    //mutator -- sets value at index to newVal,
     //           return old value at index
-    public int set( int index, int newVal ) {
-        int y = get(index);
-        _data[index] = newVal;
-        return y;
+    public int set( int index, int newVal ) { 
+        int y = get(index); //Sets int y to the value held in _data[index] MUST BE FIRST, otherwise the function would return the new value
+        _data[index] = newVal; //Sets the value held in _data[index] to the new value
+        return y; //Returns the old value
     }
 }//end class
 
