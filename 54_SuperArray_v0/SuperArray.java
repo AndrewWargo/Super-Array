@@ -19,7 +19,7 @@ public class SuperArray {
     }
 
     //returns length of _data
-    public int getLength() {
+    public int size() {
     	return _size;          
     }
 

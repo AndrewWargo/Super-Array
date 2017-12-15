@@ -11,7 +11,7 @@ public class UserOfSuperArray {
          System.out.println( curtis );
 
          // populate the sample array
-         for( int i = 0; i < curtis.getLength(); i++ ) {
+         for( int i = 0; i < curtis.size(); i++ ) {
              curtis.set( i, i * 2 );
          }
          System.out.println("Printing populated SuperArray curtis...");
