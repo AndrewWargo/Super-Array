@@ -8,9 +8,8 @@
 
 public class SuperArray {
 
-	private int[] _data;  // underlying container
+    private int[] _data;  // underlying container
     private int _size;    // the number of elements in the list
-    private int lastIndex;
 
     /** 
       default constructor
@@ -18,9 +17,8 @@ public class SuperArray {
      */
     public SuperArray() {
         _data = new int[10];
-        _size = _data.length;
-        lastIndex = -1;
-    }
+        _size = 0;
+   }
 
 
     /** 
@@ -49,11 +47,11 @@ public class SuperArray {
       @return true, in keeping with conventions yet to be discussed
      */
       public boolean add( int value) {
-    	  if(lastIndex == _size - 1) {
+    	  if(_size == _data.length) {
     		  expand();
     	  }
-    	  _data[lastIndex + 1] = value;
-    	  lastIndex++;
+    	  _data[_size] = value;
+    	  _size++;
     	  return true;
       }
 
@@ -68,7 +66,7 @@ public class SuperArray {
   	    x[i] = _data[i]; //Adds the values in _data to the new array, in the same position as data
           }
           _data = x; //Sets _data to the array referenced by x, which is itself _data with double the length
-          _size = _data.length; //Sets the size variable to the length of the new array
+         
       }
 
      
