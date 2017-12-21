@@ -88,10 +88,11 @@ public class SuperFly {
       preserving existing data
      */
       private void expand() {
-         int[] newIntData = new int[intData.length * 2];
-         double[] newDoubleData = new double[doubleData.length * 2];
-         String[] newStringData = new String[StringData.length * 2];
-         byte[] newTypeOfElement = new byte[typeOfElement.length * 2];
+	 int newLength = typeOfElement.length * 2; 
+         int[] newIntData = new int[newLength];
+         double[] newDoubleData = new double[newLength];
+         String[] newStringData = new String[newLength];
+         byte[] newTypeOfElement = new byte[newLength];
          for(int i = 0; i < filledElements; i++) {
         	 newIntData[i] = intData[i];
         	 newDoubleData[i] = doubleData[i];
