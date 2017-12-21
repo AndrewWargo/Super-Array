@@ -71,14 +71,10 @@ public class SuperFly {
     	 if(filledElements == typeOfElement.length)
     		 expand();
     	 typeOfElement[filledElements] = (byte)type;
-    	 if(type == 0){
-    		 intData[filledElements] = intValue;
-    	 } else if(type == 1) {
-    		 doubleData[filledElements] = doubleValue;
-    	 } else {
-    		 StringData[filledElements] = stringValue;
-    	 }
-    	 filledElements++;
+	 intData[filledElements] = intValue;
+	 doubleData[filledElements] = doubleValue;
+	 StringData[filledElements] = stringValue;
+      	 filledElements++;
     	 return true;
      }
 
