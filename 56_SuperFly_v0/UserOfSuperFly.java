@@ -17,15 +17,15 @@ public class UserOfSuperFly {
         System.out.println("initial population of " + list.size() + " elements:");
         System.out.println( list);
         
-        // // Add enough elements that expansion is expected
-        // for( int i = list.size(); i < 15; i++ ) {
+         // Add enough elements that expansion is expected
+         for( int i = list.size(); i < 15; i++ ) {
             
-            // if( i == 10) System.out.println( "expansion expected");
+             if( i == 10) System.out.println( "expansion expected");
             
-            // list.add( 0, -i, -2.0,  "junk");
-            // System.out.println( "number of elements: " + list.size() );
-        // }
-        // System.out.println("result of expanded list: " + list.size() + " elements:");
-        // System.out.println( list);
+             list.add( 0, -i, -2.0,  "junk");
+             System.out.println( "number of elements: " + list.size() );
+         }
+         System.out.println("result of expanded list: " + list.size() + " elements:");
+         System.out.println( list);
     }
 }

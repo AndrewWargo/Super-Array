@@ -68,16 +68,18 @@ public class SuperFly {
                        , double doubleValue
                        , String stringValue
                        ) {
-	 typeOfElement[filledElements] = (byte)type;
-	 if(type == 0){
-	     intData[filledElements] = intValue;
-	 } else if(type == 1) {
-	     doubleData[filledElements] = doubleValue;
-	 } else {
-	     StringData[filledElements] = stringValue;
-	 }
-	 filledElements++;
-	 return true;
+    	 if(filledElements == typeOfElement.length)
+    		 expand();
+    	 typeOfElement[filledElements] = (byte)type;
+    	 if(type == 0){
+    		 intData[filledElements] = intValue;
+    	 } else if(type == 1) {
+    		 doubleData[filledElements] = doubleValue;
+    	 } else {
+    		 StringData[filledElements] = stringValue;
+    	 }
+    	 filledElements++;
+    	 return true;
      }
 
 
@@ -85,11 +87,20 @@ public class SuperFly {
       Doubles the capacity of the SuperFly, 
       preserving existing data
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)"); /* comment out eventually
-           // Working methods should be silent. But during development, the programmer
-           // must verify that this method is called when that is appropriate. 
-           // S.O.P. rules for debugging.
-           // */
-     // }
+      private void expand() {
+         int[] newIntData = new int[intData.length * 2];
+         double[] newDoubleData = new double[doubleData.length * 2];
+         String[] newStringData = new String[StringData.length * 2];
+         byte[] newTypeOfElement = new byte[typeOfElement.length * 2];
+         for(int i = 0; i < filledElements; i++) {
+        	 newIntData[i] = intData[i];
+        	 newDoubleData[i] = doubleData[i];
+        	 newStringData[i] = StringData[i];
+        	 newTypeOfElement[i] = typeOfElement[i];
+         }
+         intData = newIntData;
+         doubleData = newDoubleData;
+         StringData = newStringData;
+         typeOfElement = newTypeOfElement;
+      }
 }
